@@ -22,7 +22,12 @@ Project name: protrack
 
 ## Project confirmation
 
-< to be filled by lecturer>
+confirmed.
+
+Cool idea. Make sure that you keep it simple.
+You can leave out security, authentication, etc.
+Start small but functional. Extend from there. Always keep it running. 
+Keep an eye on the time constraints.
 
 
 ## Project delivery <to be filled by student>
