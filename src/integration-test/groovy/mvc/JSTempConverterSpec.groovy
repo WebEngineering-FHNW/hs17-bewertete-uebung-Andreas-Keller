@@ -25,6 +25,6 @@ class JSTempConverterSpec extends GebSpec {
             $("form").fahrenheit  == "50"
     }
 
-    // TODO: make a new test method for fahrenheit to celsius conversion
+    // TODO: make a new overview method for fahrenheit to celsius conversion
 
 }

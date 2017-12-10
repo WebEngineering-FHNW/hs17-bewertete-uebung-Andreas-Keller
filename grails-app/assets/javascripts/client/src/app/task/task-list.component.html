@@ -1,0 +1,35 @@
+<div class="nav" role="navigation">
+    <ul>
+        <li><a [routerLink]="['/index']" class="home">Home</a></li>
+        <li><a [routerLink]="['/task','create']" class="create">New Task</a></li>
+    </ul>
+</div>
+<div id="list-task" class="content scaffold-list" role="main">
+    <h1>Task List</h1>
+    <table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr [ngClass]="{'even': e, 'odd': !e}" *ngFor="let task of taskList; let e = even;">
+      <td>
+        <a [routerLink]="['/task','show',task.id]">{{task.id}}</a>
+      </td>
+      <td>
+        <span>{{task.title}}</span>
+      </td>
+      <td>
+        <span>{{task.description}}</span>
+      </td>
+      <td>
+        <span>{{task.status}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

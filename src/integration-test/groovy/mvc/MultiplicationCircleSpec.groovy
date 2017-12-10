@@ -31,6 +31,6 @@ class MultiplicationCircleSpec extends GebSpec {
     }
 
 
-//  add a test that checks the form for the table base
+//  add a overview that checks the form for the table base
 
 }

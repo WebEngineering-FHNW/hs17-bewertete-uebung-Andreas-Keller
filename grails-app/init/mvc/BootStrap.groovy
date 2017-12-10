@@ -20,6 +20,12 @@ class BootStrap {
         save(new Booking(booker: dierk, room: windowRoom, date: today + 1, slot: Booking.AM))
         save(new Booking(booker: dierk, room: cornerRoom, date: today ,    slot: Booking.AM))
 
+        save new Task(title: "customer login", description: "add login for customers", status: Task.BACKLOG)
+        save new Task(title: "CEO login", description: "add login for CEO", status: Task.BACKLOG)
+        save new Task(title: "add Task", description: "must be able to add task", status: Task.INPROGRESS)
+        save new Task(title: "remove Task", description: "must be able to remove task", status: Task.NOTSTARTED)
+        save new Task(title: "developers login", description: "add login for developers", status: Task._DONE_)
+
     }
 
     static save(domainObject) {
