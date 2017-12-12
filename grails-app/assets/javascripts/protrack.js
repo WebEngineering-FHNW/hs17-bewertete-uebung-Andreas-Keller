@@ -6,19 +6,27 @@
 EXTERNAL from https://www.w3schools.com/html/html5_draganddrop.asp
  */
 
+var parentIdSrc;
+var parentIdDst;
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
 function drag(ev) {
+    parentIdSrc = document.getElementById(ev.target.id).parentElement.id;
+    console.log(parentIdSrc);
     ev.dataTransfer.setData("text", ev.target.id);
 }
 
 function drop(ev) {
     ev.preventDefault();
+
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
-    deleeete(ev, data);
+
+    //console.log(data);
+    post(ev, data);
     //test();
 }
 /*
@@ -31,20 +39,24 @@ require(["./client/src/app/task/task.module.js"], function (taskmodule)
     }
 });
 */
-function deleeete(ev, data)
+function post(ev, data)
 {
+    parentIdDst = document.getElementById(ev.target.id).id;
+    console.log(parentIdDst);
 
-    var URL="/task/updateStatus/3";
+    var URL="/task/updateStatus";
 
     $.ajax({
+        type: "POST",
         url: URL,
-        data: {id:1, newStatus:'_DONE_'},
-        dataType: "application/json",
+        data: {id: data, newStatus: parentIdDst},
+        //dataType: "application/json",
         //contentType: false,
-        method: 'PUT',
+        //method: 'PUT',
         success: function (result) {
             // Do something with the result
-            console.log(result)
+            console.log("success");
+            //console.log(result)
         },
         error: function (msg) {
             console.log("error in ajax")

@@ -3,7 +3,7 @@ package mvc
 import grails.rest.Resource
 
 
-@Resource(uri='/test', readOnly = false, formats = ['json', 'xml'])
+@Resource(uri='/task', readOnly = false, formats = ['json', 'xml'])
 class Task {
 
     String description
@@ -16,8 +16,8 @@ class Task {
     }
 
     static final BACKLOG = "Backlog"
-    static final NOTSTARTED = "Not started"
-    static final INPROGRESS = "In progress"
+    static final NOTSTARTED = "NotStarted"
+    static final INPROGRESS = "Started"
     static final _DONE_ = "Done"
 
     static constraints = {
