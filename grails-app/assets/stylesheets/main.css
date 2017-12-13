@@ -561,14 +561,19 @@ a.skip {
 }
 
 .grails-logo-container {
-    background:#79b94c no-repeat 50% 30%;
+    background: rgba(117, 212, 222, 0.77) no-repeat 50% 30%;
     margin-bottom: 20px;
     color: white;
     height:300px;
     text-align:center;
+    font-size: 18em;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    vertical-align: center;
 }
 
 img.grails-logo {
     height:340px;
     margin-top:-10px;
 }
+

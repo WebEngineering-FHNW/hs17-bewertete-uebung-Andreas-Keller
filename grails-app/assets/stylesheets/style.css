@@ -112,3 +112,12 @@
         height: 65px;
     }
 }
+
+.protrack-header {
+    padding-top: 130px;
+}
+
+.protrack-text {
+    text-align: center;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
