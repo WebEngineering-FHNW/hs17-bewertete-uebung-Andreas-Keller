@@ -65,6 +65,45 @@ function post(ev, data)
     });
 }
 
+function dropDelete(ev) {
+    ev.preventDefault();
+
+    var data = ev.dataTransfer.getData("text");
+    var URL="deleteTask";
+
+    $.ajax({
+        type: "POST",
+        url: URL,
+        data: {id: data},
+        success: function (result) {
+            // Do something with the result
+            location.reload(true);
+            console.log("success");
+            //console.log(result)
+        },
+        error: function (msg) {
+            console.log("error in ajax")
+            console.log(msg)
+        }
+    });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function test() {
 
     var URL="${createLink(controller:'Task',action:'updateStatus')}";

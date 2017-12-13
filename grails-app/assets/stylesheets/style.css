@@ -1,30 +1,114 @@
-h1 {
-    text-align: center;
-}
 
 .tasklist {
     float: left;
     width: 24%;
-    height: 100%;
-    padding: 0 3%;
+    height: 90%;
+    padding: 0 1%;
     border: 1px solid #AAAAAA;
     border-radius: 1%;
-    margin: 0 0.5%;
+    margin: 1% 0.5% 0 0.5%;
 }
+
+.tasklistDone {
+    height: 78% !important;
+}
+
 
 .tasklist li {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     border: 1px dotted #ADADAD;
     margin: 2% 0;
     border-radius: 2%;
+    background-color: rgba(230, 228, 12, 0.38);
+}
+
+.tasklist li div {
+    margin-left: 6px;
+}
+
+.taskform {
+    padding: 2%;
+
 }
 
 .tasklist h2 {
     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 600;
+    text-align: center;
 }
 
 .tasklist ul {
-    height: 100%;
+    height: 90%;
     list-style-type: none;
+}
+
+.delete{
+    float:left;
+    margin: 1% 0.5%;
+    height: 10%;
+    width: 24%;
+    background-color: #f69287;
+    border: 1px solid #AAAAAA;
+    border-radius: 2%;
+}
+
+.delete h2 {
+    text-align: center;
+}
+@media only screen and (min-width: 1421px) {
+    .taskform {
+        height: 170px;
+        width: 315px;
+    }
+
+    .title {
+        height: 40px;
+    }
+
+    .title input {
+        width: 200px;
+    }
+
+    .description {
+        height: 70px;
+    }
+
+    .description textarea {
+        height: 65px;
+        width: 200px;
+    }
+
+    input, textarea {
+        float: right;
+    }
+
+    label {
+        float: left;
+    }
+}
+@media only screen and (max-width: 1420px){
+
+    .taskform {
+        height: 32%;
+        width: 100%;
+    }
+
+    input, textarea{
+        float: left;
+    }
+    label {
+        clear: left;
+        width: 100%;
+    }
+    .submitsave {
+        float: right;
+        margin-top: 10px;
+    }
+    .title input {
+        width: 90%;
+    }
+    .description textarea{
+        width: 90%;
+        height: 65px;
+    }
 }

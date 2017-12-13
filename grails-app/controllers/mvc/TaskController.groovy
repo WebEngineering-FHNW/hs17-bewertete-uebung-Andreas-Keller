@@ -7,12 +7,16 @@ import org.springframework.web.bind.annotation.RestController
 
 class TaskController extends RestfulController<Task> {
 
-    static scaffold = Task
+    //static scaffold = Task
 
     static responseFormats = ['json', 'xml']
 
     TaskController() {
         super(Task)
+    }
+
+    def index(){
+        overview();
     }
 
     def overview() {
@@ -36,17 +40,53 @@ class TaskController extends RestfulController<Task> {
 
         task.save(flush:true, failOnError:true);
 
+        /*
         def backlog = Task.findAllByStatus(Task.BACKLOG)
         def notstarted = Task.findAllByStatus(Task.NOTSTARTED)
         def inprogress = Task.findAllByStatus(Task.INPROGRESS)
         def done = Task.findAllByStatus(Task._DONE_)
         render view: "overview", model: [backlog: backlog, notstarted: notstarted, inprogress: inprogress, done: done]
+        */
+    }
+
+    def addTask(){
+
+        def newTask = new Task(params);
+        newTask.save(flush:true, failOnError:true);
+
 
     }
 
+    def deleteTask(){
+
+        int id = Integer.parseInt(params.id);
+        Task task = Task.findById(id);
+        task.delete(flush: true, failOnError: true);
+
+        def backlog = Task.findAllByStatus(Task.BACKLOG)
+        def notstarted = Task.findAllByStatus(Task.NOTSTARTED)
+        def inprogress = Task.findAllByStatus(Task.INPROGRESS)
+        def done = Task.findAllByStatus(Task._DONE_)
+        render view: "overview", model: [backlog: backlog, notstarted: notstarted, inprogress: inprogress, done: done]
+    }
+
+    def delete(){
+        redirect(controller: 'task', action: 'overview')
+    }
+
+    def show(){
+        redirect(controller: 'task', action: 'overview')
+    }
+    /*
     static save(domainObject) {
         domainObject.save(failOnError: true)
     }
+    */
+
+
+
+
+
     /*
     def show() {
         [task: Task.get(params.id)]
