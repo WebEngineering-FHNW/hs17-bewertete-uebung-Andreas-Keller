@@ -1,10 +1,9 @@
-//= require jquery-2.2.0.min
-//= require bootstrap
-//= require_self
 
 /*
 EXTERNAL from https://www.w3schools.com/html/html5_draganddrop.asp
  */
+
+'use strict';
 
 var parentIdSrc;
 var parentIdDst;

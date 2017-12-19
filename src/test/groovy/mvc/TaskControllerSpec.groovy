@@ -9,14 +9,17 @@ import spock.lang.Specification
 @TestFor(TaskController)
 class TaskControllerSpec extends Specification {
 
+    TaskController taskController;
+
     def setup() {
+        taskController = new TaskController()
     }
 
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "test overview method"() {
+        when: taskController.overview()
+        then: Task.findAllByStatus(Task.BACKLOG) == []
     }
 }

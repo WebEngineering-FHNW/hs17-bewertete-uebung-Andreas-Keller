@@ -1,5 +1,6 @@
 package mvc
 
+import geb.Browser
 import geb.spock.GebSpec
 import grails.test.mixin.integration.Integration
 

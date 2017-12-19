@@ -9,14 +9,21 @@ import spock.lang.Specification
 @TestFor(Task)
 class TaskSpec extends Specification {
 
+    Task task;
+
     def setup() {
+        task = new Task();
     }
 
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "test toString method"() {
+        given:
+            task.title = "Test";
+            task.description = "is successful"
+        expect:"toString is working"
+            task.toString() == "Test is successful"
+
     }
 }
