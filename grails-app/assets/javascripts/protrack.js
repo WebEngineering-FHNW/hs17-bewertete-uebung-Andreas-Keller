@@ -1,6 +1,6 @@
 
 /*
-EXTERNAL from https://www.w3schools.com/html/html5_draganddrop.asp
+EXTERNAL: drop functions adapted from https://www.w3schools.com/html/html5_draganddrop.asp
  */
 
 'use strict';
@@ -20,24 +20,11 @@ function drag(ev) {
 
 function drop(ev) {
     ev.preventDefault();
-
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
-
-    //console.log(data);
     post(ev, data);
-    //test();
 }
-/*
-require(["./client/src/app/task/task.module.js"], function (taskmodule)
-{
-    function saveStatus(ev, data) {
-        //var status = ev.dataTransfer.getData("status");
-        //alert( status.toString() );
-        var test1 = TaskModule;
-    }
-});
-*/
+
 function post(ev, data)
 {
     parentIdDst = document.getElementById(ev.target.id).id;
@@ -49,24 +36,17 @@ function post(ev, data)
         type: "POST",
         url: URL,
         data: {id: data, newStatus: parentIdDst},
-        //dataType: "application/json",
-        //contentType: false,
-        //method: 'PUT',
         success: function (result) {
-            // Do something with the result
             console.log("success");
-            //console.log(result)
         },
         error: function (msg) {
             console.log("error in ajax")
-            console.log(msg)
         }
     });
 }
 
 function dropDelete(ev) {
     ev.preventDefault();
-
     var data = ev.dataTransfer.getData("text");
     var URL="deleteTask";
 
@@ -75,48 +55,12 @@ function dropDelete(ev) {
         url: URL,
         data: {id: data},
         success: function (result) {
-            // Do something with the result
             location.reload(true);
             console.log("success");
-            //console.log(result)
         },
         error: function (msg) {
             console.log("error in ajax")
             console.log(msg)
-        }
-    });
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function test() {
-
-    var URL="${createLink(controller:'Task',action:'updateStatus')}";
-
-    $.ajax({
-        url: URL,
-        dataType: "json",
-        success: function (data) {
-            response($.map(data, function (item) {
-                return {
-                    id: item.id,
-                    value: item.name
-                }
-            }));
         }
     });
 }
