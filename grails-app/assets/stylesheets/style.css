@@ -57,7 +57,7 @@
 }
 @media only screen and (min-width: 1421px) {
     .taskform {
-        height: 170px;
+        height: 165px;
         width: 315px;
     }
 
@@ -89,7 +89,7 @@
 @media only screen and (max-width: 1420px){
 
     .taskform {
-        height: 32%;
+        height: 210px;
         width: 100%;
     }
 
