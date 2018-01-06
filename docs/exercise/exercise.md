@@ -47,4 +47,11 @@ I'm particular proud of:
 
 ## Project grading 
 
-< to be filled by lecturer>
+Congratulations!
+This is a very nice, interactive single page application in microservice style.
+
+Some pieces are missing (e.g. description html) but this is compensated for with the extra
+points for using services and the technical challenge of drag-and-drop, respectively
+searching the web for a solution and integrating it.
+
+Total grade: 6.0
